@@ -1,0 +1,41 @@
+  version: '3.8'
+
+  services:
+    postgres:
+      container_name: postgres_raflhynr
+      image: postgres:12
+      environment:
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+        PGDATA: /data/postgres
+      volumes:
+        - postgres:/data/postgres
+      ports:
+        - "22004:5432"
+      networks:
+        - postgres
+      restart: unless-stopped
+    
+    pgadmin:
+      container_name: pgadmin_raflhynr
+      image: dpage/pgadmin4:latest
+      environment:
+        PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-admin@gmail.com}
+        PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+        PGADMIN_CONFIG_SERVER_MODE: 'False'
+      volumes:
+        - pgadmin:/var/lib/pgadmin
+
+      ports:
+        - "${PGADMIN_PORT:-44004}:80"
+      networks:
+        - postgres
+      restart: unless-stopped
+
+  networks:
+    postgres:
+      driver: bridge
+
+  volumes:
+      postgres:
+      pgadmin:
