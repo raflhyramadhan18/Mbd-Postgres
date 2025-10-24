@@ -57,6 +57,8 @@ UTS-DB/
    * Data awal mahasiswa
    * User `backend_dev`, `bi_dev`, dan `data_engineer` dengan hak akses masing-masing
 
+PgAdmin
+disesuaikan port nya 44004;
 ---
 
 ### 3️⃣ Hak Akses User
@@ -98,4 +100,5 @@ Proyek ini menunjukkan penerapan konsep **Database Security dan Role Management*
 Dengan konfigurasi Docker, database dapat dijalankan secara portabel dan mudah direplikasi di lingkungan lain.
 
 ---
+
 
