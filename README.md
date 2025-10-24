@@ -69,35 +69,6 @@ UTS-DB/
 
 ---
 
-### 4️⃣ Pengujian Role & Privilege
-
-Lakukan pengujian koneksi menggunakan setiap user:
-
-#### ✅ `backend_dev`
-
-```sql
-SELECT * FROM SALAM.mahasiswas;
-INSERT INTO SALAM.mahasiswas VALUES ('1237050019', 'anton@gmail.com', 'Anton', 2025);
-UPDATE SALAM.mahasiswas SET angkatan = 2022 WHERE nim = '1237050019';
-DELETE FROM SALAM.mahasiswas WHERE nim = '1237050019';
-```
-
-#### ✅ `bi_dev`
-
-```sql
-SELECT * FROM SALAM.mahasiswas; -- Berhasil
-INSERT INTO SALAM.mahasiswas VALUES ('1237050020', 'udin@gmail.com', 'Udin', 2025); -- Gagal
-```
-
-#### ✅ `data_engineer`
-
-```sql
-CREATE TABLE SALAM.tes_table (id SERIAL, nama TEXT);
-INSERT INTO SALAM.tes_table (nama) VALUES ('Tes');
-DROP TABLE SALAM.tes_table;
-```
-
----
 
 ## 🧾 Daftar File Utama
 
@@ -127,3 +98,4 @@ Proyek ini menunjukkan penerapan konsep **Database Security dan Role Management*
 Dengan konfigurasi Docker, database dapat dijalankan secara portabel dan mudah direplikasi di lingkungan lain.
 
 ---
+
